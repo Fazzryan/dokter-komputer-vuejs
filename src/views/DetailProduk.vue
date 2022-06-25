@@ -89,7 +89,7 @@
                 <div style="font-size: 14px">
                   <span class="mb-1">Gratis Ongkir</span>
                   <p class="text-muted">
-                    Gratis ongkir dengan min. belanja Rp 1.500.000
+                    Gratis ongkir dengan min. belanja Rp 3.500.000
                   </p>
                 </div>
               </div>
