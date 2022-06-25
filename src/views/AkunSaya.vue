@@ -115,7 +115,7 @@
                     <th scope="row">{{ order.id }}</th>
                     <td>{{ order.tanggal }}</td>
                     <td>{{ order.keranjang.length }}</td>
-                    <td>Rp. {{ order.totHarga }}</td>
+                    <td>Rp. {{ formatHarga(order.totHarga) }}</td>
                     <td>
                       <span class="badge bg-success py-2">{{
                         order.status
@@ -214,6 +214,10 @@ export default {
   methods: {
     setPesanan(data) {
       this.pesanan = data;
+    },
+    formatHarga(value) {
+      let val = (value / 1).toFixed().replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
   mounted() {
