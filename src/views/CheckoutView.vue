@@ -279,7 +279,7 @@
                   class="w-25 h-25"
                 />
                 <p>{{ keranjang.products.nama }}</p>
-                <p>Rp.{{ keranjang.products.harga }}</p>
+                <p>Rp.{{ formatHarga(keranjang.products.harga) }}</p>
               </div>
               <hr />
             </div>
@@ -296,7 +296,7 @@
             <hr />
             <div class="d-flex justify-content-between">
               <p class="fw-bold">Subtotal</p>
-              <span class="fw-bold">Rp.{{ totalHarga }}</span>
+              <span class="fw-bold">Rp.{{ formatHarga(totalHarga) }}</span>
             </div>
             <div class="d-flex justify-content-between">
               <p class="fw-bold">Biaya Pengiriman</p>
@@ -310,7 +310,7 @@
             <div class="d-flex justify-content-between">
               <p class="fw-bold">Total</p>
               <span class="fw-bold" style="color: #fe696a"
-                >Rp.{{ totalHarga }}</span
+                >Rp.{{ formatHarga(totalHarga) }}</span
               >
             </div>
           </div>
@@ -367,6 +367,10 @@ export default {
           dismissible: true,
         });
       }
+    },
+    formatHarga(value) {
+      let val = (value / 1).toFixed().replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
   computed: {
