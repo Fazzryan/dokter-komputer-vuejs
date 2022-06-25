@@ -77,7 +77,9 @@
             </div>
             <div class="card-body">
               <p class="card-title fw-bold">{{ keranjang.products.nama }}</p>
-              <p class="d-block mb-1">Rp. {{ keranjang.products.harga }}</p>
+              <p class="d-block mb-1">
+                Rp. {{ formatHarga(keranjang.products.harga) }}
+              </p>
               <div class="d-flex align-items-center justify-content-between">
                 <span class="card-text">Jumlah : {{ keranjang.qty }}</span>
                 <div>
@@ -101,13 +103,13 @@
               <small class="text-muted"
                 >Total Harga ({{ keranjangs.length }} barang)</small
               >
-              <span class="text-muted">Rp.{{ totalHarga }}</span>
+              <span class="text-muted">Rp.{{ formatHarga(totalHarga) }}</span>
             </div>
             <hr />
 
             <div class="d-flex justify-content-between mt-4">
               <p class="fw-bold">Total Harga</p>
-              <span class="fw-bold">Rp.{{ totalHarga }}</span>
+              <span class="fw-bold">Rp.{{ formatHarga(totalHarga) }}</span>
             </div>
             <form v-on:submit.prevent>
               <button class="btn my-button w-100" @click="checkout">
@@ -180,6 +182,10 @@ export default {
       } else {
         this.$router.push({ path: "/checkout" });
       }
+    },
+    formatHarga(value) {
+      let val = (value / 1).toFixed().replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
   computed: {
