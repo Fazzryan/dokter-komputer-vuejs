@@ -41,7 +41,7 @@
                   </router-link>
                 </h6>
                 <p class="fw-bold mt-2" style="color: #4e54c8">
-                  Rp. {{ product.harga }}
+                  Rp. {{ formatHarga(product.harga) }}
                 </p>
               </div>
             </div>
@@ -387,21 +387,18 @@ export default {
     setProdukAksesoris(data) {
       this.produkAksesoris = data;
     },
+    formatHarga(value) {
+      let val = (value / 1).toFixed().replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
   },
   mounted() {
-    // let user = localStorage.getItem("user-info");
-    // this.nama = JSON.parse(user).nama;
-
     axios
       .get(
         "http://localhost:3000/produk?id=1&id=2&id=5&id=6&id=10&id=9&id=20&id=17"
       )
       .then((response) => this.setProduk(response.data))
       .catch((error) => console.log("Gagal", error));
-    // axios
-    //   .get("http://localhost:3000/produk-aksesoris")
-    //   .then((response) => this.setProdukAksesoris(response.data))
-    //   .catch((error) => console.log("Gagal", error));
   },
 };
 </script>
