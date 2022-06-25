@@ -267,7 +267,9 @@
                                 class="w-25 h-25"
                               />
                               <p>{{ keranjang.products.nama }}</p>
-                              <p>Rp.{{ keranjang.products.harga }}</p>
+                              <p>
+                                Rp.{{ formatHarga(keranjang.products.harga) }}
+                              </p>
                             </div>
                             <hr />
                           </div>
