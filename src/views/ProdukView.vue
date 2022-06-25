@@ -126,7 +126,7 @@
                     >
                     <h6>
                       <router-link
-                        :to="'/all/detail-produk/' + product.id"
+                        :to="'/detail-produk/' + product.id"
                         class="link-name"
                       >
                         {{ product.nama }}
