@@ -137,8 +137,11 @@
                         {{ product.nama }}
                       </router-link>
                     </h6>
-                    <p class="fw-bold mt-2" style="color: #4e54c8">
+                    <!-- <p class="fw-bold mt-2" style="color: #4e54c8">
                       Rp. {{ product.harga }}
+                    </p> -->
+                    <p class="fw-bold mt-2" style="color: #4e54c8">
+                      Rp. {{ formatHarga(product.harga) }}
                     </p>
                   </div>
                 </div>
@@ -211,6 +214,10 @@ export default {
         .get("http://localhost:3000/produk?q=" + this.search)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
+    },
+    formatHarga(value) {
+      let val = (value / 1).toFixed().replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
   mounted() {
