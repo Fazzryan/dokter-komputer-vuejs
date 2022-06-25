@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+    background-color: #e5f3ff;
+}
+
+/* scrollbar
+/* width */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(180deg, #fe696a 21%, #4e54c8 87%);
+    /* box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5); */
+    border-radius: 100px;
+}
+
+.my-shadow {
+    box-shadow: 4px 10px 12px -14px rgb(207, 57, 57);
+}
+
+.link-name {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.link-name:hover {
+    color: #fe696a;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 11px 28px -7px rgb(106, 194, 252);
+}
+
+.card:hover {
+    box-shadow: 0px 5px 28px -7px #fe696a;
+}
+
+.my-button {
+    background: #4e54c8;
+    color: #fff;
+    box-shadow: 4px 10px 12px -8px rgb(55, 55, 249);
+    transition: 0.4s;
+}
+
+.my-button:hover {
+    background: #fe696a;
+    color: #fff;
+    box-shadow: none;
+}
+
+.my-button-2 {
+    transition: 0.4s;
+    background-color: #4e54c8;
+    box-shadow: 4px 10px 12px -8px rgb(55, 55, 249);
+    color: #fff;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.my-button-2:hover {
+    background: #fe696a;
+    color: #fff;
+    box-shadow: 4px 10px 12px -8px rgb(207, 57, 57);
+    transform: scale(1.15);
+}
+
+.my-button-3 {
+    transition: 0.3s;
+    background-color: #ff6060;
+    box-shadow: 4px 10px 12px -8px rgb(207, 57, 57);
+    color: #fff;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.my-button-3:hover {
+    background: #fe3638;
+    color: #fff;
+    box-shadow: none;
+}
+
+.my-button-outline {
+    transition: 0.3s;
+    background-color: #fff;
+    color: #fe696a;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid salmon;
+}
+
+.my-button-outline:hover {
+    background-color: #fe696a;
+    color: #fff;
+    box-shadow: none;
+    border: 1px solid #fe696a;
+}
+
+.progresses {
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+}
+
+.progresses ul {
+    list-style: none;
+    /* border: 1px solid red; */
+    padding: 0;
+}
+
+.progresses ul li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 200;
+    position: relative;
+
+}
+
+.progresses ul li.orange {
+    color: #fe3638;
+    background-color: #fe696a;
+}
+
+.progresses ul li::after {
+    position: absolute;
+    top: 35px;
+    left: -15px;
+    font-size: 0.8rem;
+    width: 90px;
+}
+
+#step-1::after {
+    content: "Informasi ";
+    color: #fe3638;
+
+}
+
+#step-2::after {
+    content: "Pengiriman";
+
+}
+
+#step-3::after {
+    content: "Pembayaran";
+}
+
+.progresses .progress {
+    height: 0.8rem;
+    width: 100%;
+    top: 33px;
+    position: absolute;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.form-control:focus {
+    border: 1px solid salmon;
+    box-shadow: 0 11px 16px -16px #fe696a;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 1px 2px 19px -7px rgb(55, 55, 249);
+}
+
+.dropdown-item:hover {
+    background-color: #fe696a;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes slideIn {
+    0% {
+        -webkit-transform: transform;
+        -webkit-opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+
+    0% {
+        -webkit-transform: translateY(1rem);
+        -webkit-opacity: 0;
+    }
+}
+
+.slideIn {
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
+}
