@@ -63,7 +63,7 @@
           <div class="col-md-6 mt-5 mt-md-0">
             <span class="badge bg-danger">{{ products.kategori }}</span>
             <h4 class="fw-bold mt-2">{{ products.nama }}</h4>
-            <p style="color: #4e54c8">Rp. {{ products.harga }}</p>
+            <p style="color: #4e54c8">Rp. {{ formatHarga(products.harga) }}</p>
             <small for="qty">Jumlah item</small>
             <form class="mt-2 d-flex" v-on:submit.prevent>
               <input
@@ -257,6 +257,10 @@ export default {
     },
     setKomentar(data) {
       this.komentars = data;
+    },
+    formatHarga(value) {
+      let val = (value / 1).toFixed().replace(".", ",");
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
     tambahCart() {
       if (this.user) {
