@@ -80,7 +80,12 @@
           <div class="col-lg-9 col-md-12 mt-3">
             <div class="row justify-content-between">
               <div class="col-md-4 order-1 order-md-0">
-                <h3 class="fw-bold mt-3 mt-md-0">Semua Produk</h3>
+                <h3 class="fw-bold mt-3 mt-md-0" v-if="kategori === ''">
+                  Semua Produk
+                </h3>
+                <h3 class="fw-bold mt-3 mt-md-0" v-if="kategori">
+                  {{ kategori }}
+                </h3>
                 <hr />
               </div>
               <div class="col-md-5 order-0">
@@ -164,6 +169,7 @@ export default {
   },
   data() {
     return {
+      kategori: "",
       products: [],
       search: "",
     };
@@ -173,24 +179,28 @@ export default {
       this.products = data;
     },
     allProduk() {
+      this.kategori = "Semua Produk";
       axios
         .get("http://localhost:3000/produk")
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariKomputer(komputer) {
+      this.kategori = komputer;
       axios
         .get("http://localhost:3000/produk?kategori=" + komputer)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariKomponenPc(komponenPc) {
+      this.kategori = komponenPc;
       axios
         .get("http://localhost:3000/produk?kategori=" + komponenPc)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariAksesoris(aksesoris) {
+      this.kategori = aksesoris;
       axios
         .get("http://localhost:3000/produk?kategori=" + aksesoris)
         .then((response) => this.setProduct(response.data))
