@@ -16,11 +16,6 @@
             :id="product.id"
           >
             <div class="card">
-              <div class="position-absolute me-4 mt-2 top-0 end-0">
-                <button class="btn btn-outline-danger">
-                  <i class="fa-solid fa-heart"></i>
-                </button>
-              </div>
               <router-link
                 :to="'/detail-produk/' + product.id"
                 class="mx-auto mt-5"
