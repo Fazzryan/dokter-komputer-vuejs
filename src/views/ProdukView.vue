@@ -227,7 +227,7 @@ export default {
   font-size: 14px;
   color: rgb(116, 116, 116);
 }
-span,
+
 p {
   font-size: 14px;
 }
