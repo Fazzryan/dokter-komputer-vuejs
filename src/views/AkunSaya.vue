@@ -43,76 +43,47 @@
         "
       >
         <div class="row">
-          <div class="col-10">
-            <h5 class="border-bottom pb-2">Info Akun</h5>
-            <div class="">
-              <div class="d-flex justify-content-between ingfo my-1">
-                <span class="fw-bold">Nama Lengkap :</span>
-                <span>{{ namaD }} {{ namaB }}</span>
-              </div>
-              <div class="d-flex justify-content-between ingfo my-1">
-                <span class="fw-bold">Email :</span>
-                <span>{{ email }}</span>
-              </div>
-              <div class="d-flex justify-content-between ingfo my-1">
-                <span class="fw-bold">Password :</span>
-                <span>{{ password }}</span>
-              </div>
-              <div class="d-flex justify-content-between ingfo my-1">
-                <span class="fw-bold">Telepon :</span>
-                <span>{{ telepon }}</span>
-              </div>
+          <div class="col-md-6">
+            <h6 class="pb-2 ms-2 text-muted">
+              <i class="fa-solid fa-user"></i> {{ namaD }} {{ namaB }}
+            </h6>
+            <div class="table-responsive-sm">
+              <table class="table border">
+                <tbody>
+                  <tr>
+                    <td>Nama Lengkap</td>
+                    <td>{{ namaD }} {{ namaB }}</td>
+                  </tr>
+                  <tr>
+                    <td>Email</td>
+                    <td>{{ email }}</td>
+                  </tr>
+                  <tr>
+                    <td>Telepon</td>
+                    <td>{{ telepon }}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section v-if="pesanan < 1">
-      <div
-        class="container py-2 mt-3 bg-white"
-        style="
-          box-shadow: 0px 11px 28px -7px rgba(174, 215, 225, 1);
-          border-radius: 10px;
-          margin-top: -30px;
-        "
-      >
-        <div class="row">
-          <div class="col-12 text-center py-2">
-            <h5 class="">Tidak ada Riwayat Transaksi.</h5>
-            <router-link to="/produk" class="btn my-button-outline px-4">
-              <i class="fa-solid fa-arrow-left"></i> Belanja
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div
-        class="container py-3 mt-3 bg-white"
-        style="
-          box-shadow: 0px 11px 28px -7px rgba(174, 215, 225, 1);
-          border-radius: 10px;
-          margin-top: -30px;
-        "
-      >
-        <div class="row">
-          <div class="col-12">
-            <div class="table-responsive">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Id Pesanan</th>
-                    <th scope="col">Tanggal</th>
-                    <th scope="col">Jumlah Item</th>
-                    <th scope="col">Total Harga</th>
-                    <th scope="col">Status</th>
-                  </tr>
-                </thead>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <h6 class="pb-2 ms-2 text-muted">
+              <i class="fa-solid fa-file-circle-exclamation"></i> Riwayat
+              Pembelian
+            </h6>
+            <div class="table-responsive" v-if="pesanan != 0">
+              <table class="table border">
                 <tbody>
+                  <tr>
+                    <th>Id Pesanan</th>
+                    <th>Tanggal</th>
+                    <th>Jumlah Item</th>
+                    <th>Total Harga</th>
+                    <th>Status</th>
+                  </tr>
                   <tr v-for="order in pesanan" :key="order.id">
-                    <th scope="row">{{ order.id }}</th>
+                    <td class="fw-bold">{{ order.id }}</td>
                     <td>{{ order.tanggal }}</td>
                     <td>{{ order.keranjang.length }}</td>
                     <td>Rp. {{ formatHarga(order.totHarga) }}</td>
@@ -124,6 +95,15 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <div class="text-center" v-if="pesanan < 1">
+              <h5 class="ms-2 fw-bold">Kamu belum pernah bertransaksi</h5>
+              <p>
+                Yuk, mulai belanja dan lengkapi kebutuhanmu di Dokter Komputer!
+              </p>
+              <router-link to="/produk" class="btn my-button px-4">
+                Belanja
+              </router-link>
             </div>
           </div>
         </div>
@@ -140,43 +120,51 @@
         "
       >
         <div class="row">
-          <div class="col-12 py-3">
-            <h5>Detail Akun Pembelian</h5>
-            <div class="table-responsive">
-              <table class="table" v-for="order in pesanan" :key="order.id">
-                <tbody v-for="data in order.dataForm" :key="data.id">
+          <h6 class="ms-2 my-3">Detail Akun Pembelian</h6>
+          <div
+            class="col-md-6 col-lg-4"
+            v-for="order in pesanan"
+            :key="order.id"
+          >
+            <div class="table-responsive-sm">
+              <table
+                class="table border"
+                v-for="data in order.dataForm"
+                :key="data.id"
+              >
+                <tbody>
                   <tr>
-                    <td width="20%">Id Pesanan :</td>
-                    <td>{{ order.id }}</td>
+                    <td class="fw-bold">Id Pesanan :</td>
+                    <td class="fw-bold">{{ order.id }}</td>
                   </tr>
                   <tr>
-                    <td>Nama :</td>
+                    <td>Nama</td>
                     <td>
                       {{ data.nama }}
                     </td>
                   </tr>
                   <tr>
-                    <td>Email :</td>
+                    <td>Email</td>
                     <td>{{ data.email }}</td>
                   </tr>
                   <tr>
-                    <td>Kecamatan :</td>
+                    <td>Kecamatan</td>
                     <td>{{ data.kecamatan }}</td>
                   </tr>
                   <tr>
-                    <td>Kota :</td>
+                    <td>Kota</td>
                     <td>{{ data.kota }}</td>
                   </tr>
                   <tr>
-                    <td>Provinsi :</td>
+                    <td>Provinsi</td>
                     <td>{{ data.provinsi }}, {{ data.negara }}</td>
                   </tr>
                   <tr>
-                    <td>Kode Pos :</td>
+                    <td>Kode Pos</td>
                     <td>{{ data.kodePos }}</td>
                   </tr>
-                  <tr class="border-bottom border-danger">
-                    <td>Telepon :</td>
+                  <tr>
+                    <td>Telepon</td>
                     <td>{{ data.notelp }}</td>
                   </tr>
                 </tbody>
@@ -240,8 +228,13 @@ export default {
 </script>
 
 <style scoped>
+table,
+p {
+  font-size: 14px;
+}
+
 .ingfo {
-  width: 35%;
+  width: 50%;
 }
 @media (max-width: 768px) {
   .ingfo {
