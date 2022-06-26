@@ -333,6 +333,7 @@ export default {
   name: "CheckoutView",
   data() {
     return {
+      userId: "",
       keranjangs: [],
       dataForm: {},
     };
@@ -381,8 +382,10 @@ export default {
     },
   },
   mounted() {
+    let user = localStorage.getItem("user-info");
+    this.userId = JSON.parse(user).id;
     axios
-      .get("http://localhost:3000/keranjang/")
+      .get("http://localhost:3000/keranjang?userId=" + this.userId)
       .then((response) => this.setKeranjang(response.data))
       .catch((error) => console.log("ERROR", error));
   },
