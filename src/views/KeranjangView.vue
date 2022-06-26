@@ -45,18 +45,20 @@
         <div class="col-md-6">
           <!-- jika keranjang kosong -->
           <div class="mb-4 text-center" v-if="keranjangs == 0">
-            <h5>Opss! Keranjang kamu masih kosong..</h5>
             <img
               src="../assets/img/empty_cart.png"
               alt="gambar"
-              class="my-4 w-75 text-center shadow"
+              class="mb-4 w-75 text-center shadow"
               style="border-radius: 20px"
             />
             <br />
+            <h5 class="fw-bold">Opss! Keranjang kamu masih kosong</h5>
+            <p style="font-size: 14px">
+              Yuk, mulai belanja dan lengkapi kebutuhanmu di Dokter Komputer!
+            </p>
             <router-link to="/produk" class="btn my-button-3">
-              <i class="fa-solid fa-arrow-left"></i> Lanjutkan
-              belanja</router-link
-            >
+              Belanja <i class="fa-solid fa-arrow-right"></i
+            ></router-link>
           </div>
 
           <!-- jika ada item di keranjang -->
