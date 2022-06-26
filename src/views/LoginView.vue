@@ -70,6 +70,13 @@ export default {
           dismissible: true,
         });
         this.$router.push({ path: "/" });
+      } else {
+        this.$toast.error("Login Gagal!", {
+          type: "error",
+          position: "top",
+          duration: 3000,
+          dismissible: true,
+        });
       }
     },
   },
