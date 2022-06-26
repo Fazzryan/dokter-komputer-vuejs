@@ -412,7 +412,7 @@ export default {
   name: "CheckoutPengiriman",
   data() {
     return {
-      user: "",
+      userId: "",
       keranjangs: [],
       dataOngkir: [],
       metode_pembayaran: "BRI Virtual Account",
@@ -476,7 +476,7 @@ export default {
           tanggal: this.currentDateTime(),
           totHarga: this.total2,
           status: "Processing",
-          userId: this.user,
+          userId: this.userId,
         })
         .then(() => {
           axios
@@ -506,9 +506,9 @@ export default {
   },
   mounted() {
     let user = localStorage.getItem("user-info");
-    this.user = JSON.parse(user).id;
+    this.userId = JSON.parse(user).id;
     axios
-      .get("http://localhost:3000/keranjang/")
+      .get("http://localhost:3000/keranjang?userId=" + this.userId)
       .then((response) => this.setKeranjang(response.data))
       .catch((error) => console.log("ERROR", error));
     axios
