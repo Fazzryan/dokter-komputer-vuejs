@@ -227,7 +227,7 @@ export default {
     this.user = JSON.parse(user).id;
 
     axios
-      .get("http://localhost:3000/orderan?userId=" + this.user)
+      .get("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/orderan?userId=" + this.user)
       .then((response) => {
         this.setPesanan(response.data);
       })
