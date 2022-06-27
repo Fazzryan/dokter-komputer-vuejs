@@ -184,34 +184,34 @@ export default {
     allProduk() {
       this.kategori = "Semua Produk";
       axios
-        .get("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/produk")
+        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk")
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariKomputer(komputer) {
       this.kategori = komputer;
       axios
-        .get("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/produk?kategori=" + komputer)
+        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk?kategori=" + komputer)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariKomponenPc(komponenPc) {
       this.kategori = komponenPc;
       axios
-        .get("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/produk?kategori=" + komponenPc)
+        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk?kategori=" + komponenPc)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariAksesoris(aksesoris) {
       this.kategori = aksesoris;
       axios
-        .get("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/produk?kategori=" + aksesoris)
+        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk?kategori=" + aksesoris)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     searchProduct() {
       axios
-        .get("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/produk?q=" + this.search)
+        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk?q=" + this.search)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
@@ -222,7 +222,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/produk")
+      .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk")
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log("ERROR", error));
   },
