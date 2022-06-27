@@ -78,12 +78,13 @@
                   <tr>
                     <th>Id Pesanan</th>
                     <th>Tanggal</th>
-                    <th>Jumlah Item</th>
+                    <th>Jml Item</th>
                     <th>Total Harga</th>
                     <th>Status</th>
+                    <th>Aksi</th>
                   </tr>
                   <tr v-for="order in pesanan" :key="order.id">
-                    <td class="fw-bold">{{ order.id }}</td>
+                    <td class="fw-bold">#{{ order.id }}</td>
                     <td>{{ order.tanggal }}</td>
                     <td>{{ order.keranjang.length }}</td>
                     <td>Rp. {{ formatHarga(order.totHarga) }}</td>
@@ -91,6 +92,11 @@
                       <span class="badge bg-success py-2">{{
                         order.status
                       }}</span>
+                    </td>
+                    <td>
+                      <router-link class="my-button-outline" to="">
+                        <i class="fa-solid fa-eye"></i> View
+                      </router-link>
                     </td>
                   </tr>
                 </tbody>
@@ -135,7 +141,7 @@
                 <tbody>
                   <tr>
                     <td class="fw-bold">Id Pesanan :</td>
-                    <td class="fw-bold">{{ order.id }}</td>
+                    <td class="fw-bold">#{{ order.id }}</td>
                   </tr>
                   <tr>
                     <td>Nama</td>
