@@ -94,7 +94,10 @@
                       }}</span>
                     </td>
                     <td>
-                      <router-link class="my-button-outline" to="">
+                      <router-link
+                        class="my-button-outline"
+                        :to="'/akun/pesanan/' + order.id"
+                      >
                         <i class="fa-solid fa-eye"></i> View
                       </router-link>
                     </td>
