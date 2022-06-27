@@ -92,7 +92,7 @@
               <div class="col-md-6 my-2 col-lg-4 text-center">
                 <div
                   class="border rounded-3 payment-method p-2"
-                  @click="isi_pembayaran('BRI Virtual Account')"
+                  @click="isiPembayaran('BRI Virtual Account')"
                 >
                   <img
                     src="../assets/img/BRIVA.svg"
@@ -106,7 +106,7 @@
               <div class="col-md-6 my-2 col-lg-4 text-center">
                 <div
                   class="border rounded-3 payment-method p-2"
-                  @click="isi_pembayaran('BCA Virtual Account')"
+                  @click="isiPembayaran('BCA Virtual Account')"
                 >
                   <img
                     src="../assets/img/bca.png"
@@ -119,7 +119,7 @@
               <div class="col-md-6 my-2 col-lg-4 text-center">
                 <div
                   class="border rounded-3 payment-method p-2"
-                  @click="isi_pembayaran('BNI Virtual Account')"
+                  @click="isiPembayaran('BNI Virtual Account')"
                 >
                   <img
                     src="../assets/img/bni.png"
@@ -132,7 +132,7 @@
               <div class="col-md-6 my-2 col-lg-4 text-center">
                 <div
                   class="border rounded-3 payment-method p-2"
-                  @click="isi_pembayaran('Mandiri Virtual Account')"
+                  @click="isiPembayaran('Mandiri Virtual Account')"
                 >
                   <img
                     src="../assets/img/MandiriVA.svg"
@@ -145,7 +145,7 @@
               <div class="col-md-6 my-2 col-lg-4 text-center">
                 <div
                   class="border rounded-3 payment-method p-2"
-                  @click="isi_pembayaran('Alfamart Group')"
+                  @click="isiPembayaran('Alfamart Group')"
                 >
                   <img
                     src="../assets/img/Alfamart.svg"
@@ -158,7 +158,7 @@
               <div class="col-md-6 my-2 col-lg-4 text-center">
                 <div
                   class="border rounded-3 payment-method p-2"
-                  @click="isi_pembayaran('Indomaret')"
+                  @click="isiPembayaran('Indomaret')"
                 >
                   <img
                     src="../assets/img/Indomaret.svg"
@@ -171,7 +171,7 @@
               <div class="col-md-6 my-2 col-lg-4 text-center">
                 <div
                   class="border rounded-3 payment-method p-2"
-                  @click="isi_pembayaran('GoPay')"
+                  @click="isiPembayaran('GoPay')"
                 >
                   <img
                     src="../assets/img/GoPay.svg"
@@ -184,7 +184,7 @@
               <div class="col-md-6 my-2 col-lg-4 text-center">
                 <div
                   class="border rounded-3 payment-method p-2"
-                  @click="isi_pembayaran('Ovo')"
+                  @click="isiPembayaran('Ovo')"
                 >
                   <img
                     src="../assets/img/Ovo.svg"
@@ -197,7 +197,7 @@
               <div class="col-md-6 my-2 col-lg-4 text-center">
                 <div
                   class="border rounded-3 payment-method p-2"
-                  @click="isi_pembayaran('Dana')"
+                  @click="isiPembayaran('Dana')"
                 >
                   <img
                     src="../assets/img/DANA.svg"
@@ -390,7 +390,7 @@
             </div>
             <div class="d-flex justify-content-between mt-2">
               <p class="fw-bold">Metode Pembayaran</p>
-              <span class="fw-bold">{{ metode_pembayaran }}</span>
+              <span class="fw-bold">{{ metodePembayaran }}</span>
             </div>
           </div>
         </div>
@@ -415,7 +415,7 @@ export default {
       userId: "",
       keranjangs: [],
       dataOngkir: [],
-      metode_pembayaran: "BRI Virtual Account",
+      metodePembayaran: "BRI Virtual Account",
       dataForm: [],
     };
   },
@@ -447,8 +447,8 @@ export default {
     setDataForm(data) {
       this.dataForm = data;
     },
-    isi_pembayaran(data) {
-      this.metode_pembayaran = data;
+    isiPembayaran(data) {
+      this.metodePembayaran = data;
     },
     hapusDataOngkir() {
       axios
