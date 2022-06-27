@@ -395,7 +395,7 @@ export default {
   mounted() {
     axios
       .get(
-        "http://localhost:3000/produk?id=1&id=2&id=5&id=6&id=10&id=9&id=20&id=17"
+        "https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/produk?id=1&id=2&id=5&id=6&id=10&id=9&id=20&id=17"
       )
       .then((response) => this.setProduk(response.data))
       .catch((error) => console.log("Gagal", error));
