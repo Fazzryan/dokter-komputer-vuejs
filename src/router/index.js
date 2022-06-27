@@ -11,6 +11,7 @@ import CheckoutView from '../views/CheckoutView.vue'
 import CheckoutPengiriman from '../views/CheckoutPengiriman.vue'
 import CheckoutPembayaran from '../views/CheckoutPembayaran.vue'
 import CheckoutSukses from '../views/CheckoutSukses.vue'
+import PesananSaya from '../views/PesananSaya.vue'
 import AkunSaya from '../views/AkunSaya.vue'
 import LoginView from '../views/LoginView.vue'
 import RegistrasiView from '../views/RegistrasiView.vue'
@@ -81,6 +82,11 @@ const routes = [
     path: '/akun',
     name: 'Akun Saya - Dokter Komputer',
     component: AkunSaya
+  },
+  {
+    path: '/akun/pesanan/:id',
+    name: 'Pesanan - Dokter Komputer',
+    component: PesananSaya
   },
   {
     path: '/login',
