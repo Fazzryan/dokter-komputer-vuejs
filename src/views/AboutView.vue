@@ -38,7 +38,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 mt-2">
-            <div class="card" style="width: 18rem">
+            <div class="card">
               <img src="../assets/img/profile1.jpg" class="rounded-3" alt="" />
               <div class="card-body text-center">
                 <h5 class="fw-bold text-uppercase">Dinda Fazryan</h5>
@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 mt-2">
-            <div class="card" style="width: 18rem">
+            <div class="card">
               <img src="" class="rounded-3" alt="Andika " />
               <div class="card-body text-center">
                 <h5 class="fw-bold text-uppercase">Andika Adipradana Faisal</h5>
@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 mt-2">
-            <div class="card" style="width: 18rem">
+            <div class="card">
               <img src="" class="rounded-3" alt="Fakhir " />
               <div class="card-body text-center">
                 <h5 class="fw-bold text-uppercase">Fakhir Saeful Akmal</h5>
@@ -74,7 +74,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 mt-2">
-            <div class="card" style="width: 18rem">
+            <div class="card">
               <img src="" class="rounded-3" alt="Faisal " />
               <div class="card-body text-center">
                 <h5 class="fw-bold text-uppercase">Faisal Nurojab</h5>
@@ -86,7 +86,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 mt-2">
-            <div class="card" style="width: 18rem">
+            <div class="card">
               <img src="" class="rounded-3" alt="Furkon " />
               <div class="card-body text-center">
                 <h5 class="fw-bold text-uppercase">Furkon Maulana</h5>
@@ -98,7 +98,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-6 mt-2">
-            <div class="card" style="width: 18rem">
+            <div class="card">
               <img src="" class="rounded-3" alt="Wildan " />
               <div class="card-body text-center">
                 <h5 class="fw-bold text-uppercase">Wildan Nurjamil</h5>
