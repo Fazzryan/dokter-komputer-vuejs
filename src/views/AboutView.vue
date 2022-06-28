@@ -47,7 +47,7 @@
           <div class="col-md-6">
             <img src="../assets/img/banner1.png" class="w-100" alt="" />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 mt-3 mt-md-0">
             <div class="ms-3">
               <h5>Tentang Kami</h5>
               <p class="mt-3">
