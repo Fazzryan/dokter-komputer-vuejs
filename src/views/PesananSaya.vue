@@ -52,11 +52,6 @@
         "
       >
         <div class="row">
-          <!-- <div class="text-start">
-            <router-link class="btn my-button-3" to="/akun">
-              <i class="fa-solid fa-arrow-left"></i> Kembali
-            </router-link>
-          </div> -->
           <div class="col-md-12">
             <h6 class="pb-2 ms-2 text-muted">
               <i class="fa-solid fa-file-circle-exclamation"></i> Detail Pesanan
@@ -105,6 +100,15 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-3">
+        <div class="row">
+          <div class="text-start">
+            <router-link class="btn my-button-3" to="/akun">
+              <i class="fa-solid fa-arrow-left"></i> Kembali
+            </router-link>
           </div>
         </div>
       </div>
