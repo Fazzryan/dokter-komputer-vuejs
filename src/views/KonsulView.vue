@@ -2,7 +2,8 @@
   <div class="konsul">
     <NavbarView />
     <div class="container">
-      <div class="border bg-light rounded-3 w-50 mx-auto">
+      <p>Belum ada konten</p>
+      <!-- <div class="border bg-light rounded-3 w-50 mx-auto">
         <h5
           class="card-header d-flex align-items-center justify-content-between"
         >
@@ -76,7 +77,7 @@
             Kirim
           </button>
         </div>
-      </div>
+      </div> -->
     </div>
     <FooterView />
   </div>
