@@ -184,34 +184,34 @@ export default {
     allProduk() {
       this.kategori = "Semua Produk";
       axios
-        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk")
+        .get("http://localhost:3000/produk")
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariKomputer(komputer) {
       this.kategori = komputer;
       axios
-        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk?kategori=" + komputer)
+        .get("http://localhost:3000/produk?kategori=" + komputer)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariKomponenPc(komponenPc) {
       this.kategori = komponenPc;
       axios
-        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk?kategori=" + komponenPc)
+        .get("http://localhost:3000/produk?kategori=" + komponenPc)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariAksesoris(aksesoris) {
       this.kategori = aksesoris;
       axios
-        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk?kategori=" + aksesoris)
+        .get("http://localhost:3000/produk?kategori=" + aksesoris)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     searchProduct() {
       axios
-        .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk?q=" + this.search)
+        .get("http://localhost:3000/produk?q=" + this.search)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
@@ -222,7 +222,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://fazzryan.github.io/dokter-komputer-api/db.json/produk")
+      .get("http://localhost:3000/produk")
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log("ERROR", error));
   },

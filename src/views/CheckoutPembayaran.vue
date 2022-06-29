@@ -301,7 +301,7 @@
                             </div>
                             <div class="col-md-5 mt-4 mt-md-0">
                               <p class="fw-bold">Metode Pembayaran</p>
-                              <p>{{ metode_pembayaran }}</p>
+                              <p>{{ metodePembayaran }}</p>
                             </div>
                           </div>
                         </div>

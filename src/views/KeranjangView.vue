@@ -157,7 +157,7 @@ export default {
     },
     hapusKeranjang(id) {
       axios
-        .delete("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/keranjang/" + id)
+        .delete("http://localhost:3000/keranjang/" + id)
         .then(() => {
           this.$toast.success("Barang berhasil dihapus dari keranjang!", {
             type: "success",
@@ -167,7 +167,7 @@ export default {
           });
           // update data keranjang
           axios
-            .get("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/keranjang?userId=" + this.user)
+            .get("http://localhost:3000/keranjang?userId=" + this.user)
             .then((response) => this.setKeranjang(response.data))
             .catch((error) => console.log("ERROR", error));
         })
@@ -201,7 +201,7 @@ export default {
     let user = localStorage.getItem("user-info");
     this.user = JSON.parse(user).id;
     axios
-      .get("https://my-json-server.typicode.com/Fazzryan/dokter-komputer-api/keranjang?userId=" + this.user)
+      .get("http://localhost:3000/keranjang?userId=" + this.user)
       .then((response) => this.setKeranjang(response.data))
       .catch((error) => console.log("ERROR", error));
   },

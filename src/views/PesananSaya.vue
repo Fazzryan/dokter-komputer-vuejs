@@ -56,10 +56,14 @@
             <h6 class="pb-2 ms-2 text-muted">
               <i class="fa-solid fa-file-circle-exclamation"></i> Detail Pesanan
             </h6>
-            <div v-for="data in pesanan" :key="data.id">
-              <div v-for="item in data.keranjang" :key="item.id">
+            <div>
+              <div>
                 <div class="table-responsive">
-                  <table class="table border mt-md-2">
+                  <table
+                    class="table border mt-md-2"
+                    v-for="data in pesanan"
+                    :key="data.id"
+                  >
                     <tbody>
                       <tr>
                         <th>Produk</th>
@@ -67,10 +71,10 @@
                         <th>Jumlah</th>
                         <th>Total</th>
                       </tr>
-                      <tr>
+                      <tr v-for="item in data.keranjang" :key="item.id">
                         <td>{{ item.products.nama }}</td>
                         <td>Rp. {{ formatHarga(item.products.harga) }}</td>
-                        <td>{{ data.keranjang.length }}</td>
+                        <td>{{ item.qty }}</td>
                         <td>Rp. {{ formatHarga(data.totHarga) }}</td>
                       </tr>
                     </tbody>

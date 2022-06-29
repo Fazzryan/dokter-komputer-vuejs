@@ -29,7 +29,7 @@
               Login
             </button>
             <p class="text-center mt-4">
-              Belum punya akun? Resgistrasi
+              Belum punya akun? Registrasi
               <a href="/registrasi" class="">disini</a>
             </p>
           </div>

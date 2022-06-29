@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top nav bg-white">
     <div class="container py-2">
-      <router-link class="navbar-brand fw-bold" to="/"
-        >DOKTER
+      <router-link class="navbar-brand fw-bold" to="/">
+        DOKTER
         <span class="text-white p-2 rounded-3" style="background-color: #fe696a"
           >KOMPUTER</span
         ></router-link
