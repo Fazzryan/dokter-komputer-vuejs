@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard">
+  <div>
     <HeaderDashboard />
     <section>
       <div class="container-fluid">
@@ -22,10 +22,7 @@
           </div>
           <div class="col-lg-9 rounded ms-4 mt-2">
             <div class="d-flex justify-content-between my-3">
-              <h3>Semua Produk</h3>
-              <button class="btn my-button">
-                <i class="fa-solid fa-plus"></i> Tambah Data
-              </button>
+              <h3>Edit Produk</h3>
             </div>
             <div class="row">
               <div class="table-responsive">
@@ -38,22 +35,6 @@
                       <th>Aksi</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr v-for="product in products" :key="product.id">
-                      <td>{{ product.nama }}</td>
-                      <td>{{ product.kategori }}</td>
-                      <td>Rp.{{ formatHarga(product.harga) }}</td>
-                      <td>
-                        <a href="" class="btn my-button"
-                          ><i class="fa-solid fa-pen-to-square"></i>
-                        </a>
-                        |
-                        <a href="" class="btn my-button"
-                          ><i class="fa-solid fa-trash-can"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
                 </table>
               </div>
             </div>
@@ -68,32 +49,11 @@
 <script>
 import HeaderDashboard from "@/components/HeaderDashboard.vue";
 import FooterView from "@/components/FooterView.vue";
-import axios from "axios";
 export default {
-  name: "DashboardProduk",
+  name: "DashboardProdukEdit",
   components: {
     HeaderDashboard,
     FooterView,
-  },
-  data() {
-    return {
-      products: [],
-    };
-  },
-  methods: {
-    setProduk(data) {
-      this.products = data;
-    },
-    formatHarga(value) {
-      let val = (value / 1).toFixed().replace(".", ",");
-      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    },
-  },
-  mounted() {
-    axios
-      .get("http://localhost:3000/produk")
-      .then((response) => this.setProduk(response.data))
-      .catch((error) => console.log("Error", error));
   },
 };
 </script>
