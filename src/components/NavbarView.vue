@@ -87,7 +87,7 @@
                 aria-labelledby="dropdownMenuLink"
               >
                 <li v-if="namaD == 'Admin'">
-                  <router-link class="dropdown-item" to="/akun"
+                  <router-link class="dropdown-item" to="/dashboard"
                     ><i class="fa-solid fa-chart-line me-1"></i>
                     Dashboard</router-link
                   >
