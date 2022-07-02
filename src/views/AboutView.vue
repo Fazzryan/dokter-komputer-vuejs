@@ -55,8 +55,9 @@
                 <p class="mt-3">
                   Dokter komputer merupakan aplikasi berbasis web yang telah
                   dibikin oleh kelompok 5 untuk memenuhi salah satu tugas mata
-                  kuliah RPL. Dimana aplikasi ini menyediakan berbagai macam
-                  komponen komputer/laptop yang mungkin anda sedang cari.
+                  kuliah <b>Rekayasa Perangkat Lunak (RPL)</b>. Dimana aplikasi
+                  ini menyediakan berbagai macam komponen komputer/laptop yang
+                  mungkin anda sedang cari.
                 </p>
                 <p>
                   Selain itu aplikasi ini juga menyediakan jasa service, yang

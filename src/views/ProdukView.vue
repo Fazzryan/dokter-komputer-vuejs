@@ -54,25 +54,46 @@
                   class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
                   @click="cariKomputer('Komputer')"
                 >
-                  Komputer
+                  <i class="fa-solid fa-computer"></i> Komputer
                 </div>
                 <div
                   class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
                   @click="cariKomponenPc('KomponenPc')"
                 >
-                  KomponenPC
+                  <i class="fa-solid fa-microchip me-1"></i> KomponenPC
                 </div>
-                <!-- <div
+                <div
                   class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
                   @click="cariMouseKeyboard('MouseKeyboard')"
                 >
-                  Mouse/Keyboard
-                </div> -->
+                  <i class="fa-solid fa-computer-mouse me-2"></i> Mouse/Keyboard
+                </div>
                 <div
                   class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
                   @click="cariAksesoris('Aksesoris')"
                 >
-                  Aksesoris
+                  <i class="fa-solid fa-headset me-1"></i> Aksesoris
+                </div>
+              </div>
+
+              <div class="py-1">
+                <div class="text-start px-3 mx-2 mx-md-3">
+                  <h3 class="fw-bold">Filter</h3>
+                  <hr />
+                </div>
+                <div
+                  class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
+                  @click="hargaTertinggi()"
+                >
+                  <i class="fa-solid fa-arrow-up-short-wide"></i> Harga
+                  Tertinggi
+                </div>
+                <div
+                  class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
+                  @click="hargaTerendah()"
+                >
+                  <i class="fa-solid fa-arrow-down-wide-short"></i> Harga
+                  Terendah
                 </div>
               </div>
             </div>
@@ -172,6 +193,7 @@ export default {
   },
   data() {
     return {
+      filter: "",
       kategori: "",
       products: [],
       search: "",
@@ -206,6 +228,18 @@ export default {
       this.kategori = aksesoris;
       axios
         .get("http://localhost:3000/produk?kategori=" + aksesoris)
+        .then((response) => this.setProduct(response.data))
+        .catch((error) => console.log("ERROR", error));
+    },
+    hargaTertinggi() {
+      axios
+        .get("http://localhost:3000/produk?_sort=harga&_order=desc")
+        .then((response) => this.setProduct(response.data))
+        .catch((error) => console.log("ERROR", error));
+    },
+    hargaTerendah() {
+      axios
+        .get("http://localhost:3000/produk?_sort=harga&_order=asc")
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
