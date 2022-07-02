@@ -86,6 +86,12 @@
                 class="dropdown-menu animate slideIn"
                 aria-labelledby="dropdownMenuLink"
               >
+                <li v-if="namaD == 'Admin'">
+                  <router-link class="dropdown-item" to="/akun"
+                    ><i class="fa-solid fa-chart-line me-1"></i>
+                    Dashboard</router-link
+                  >
+                </li>
                 <li>
                   <router-link class="dropdown-item" to="/akun"
                     ><i class="fa-regular fa-circle-user me-1"></i>
