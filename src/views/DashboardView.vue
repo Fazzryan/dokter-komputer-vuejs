@@ -1,84 +1,62 @@
 <template>
   <div class="dashboard">
-    <!-- Header -->
-    <header
-      class="navbar navbar-light sticky-top bg-white flex-md-nowrap py-3"
-      style="margin-top: -120px"
-    >
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"
-        >Dokter Komputer</a
-      >
-      <button
-        class="navbar-toggler position-absolute d-md-none collapsed"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#sidebarMenu"
-        aria-controls="sidebarMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <input
-        class="form-control form-control-dark w-100"
-        type="text"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <div class="navbar-nav">
-        <div class="nav-item text-nowrap">
-          <form>
-            <button type="submit" class="nav-link px-3 border-0">
-              Logout <span data-feather="log-out"></span>
-            </button>
-          </form>
+    <HeaderDashboard />
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-2 rounded bg-white">
+            <div class="position-sticky pt-3">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="/dashboard">
+                    <i class="fa-solid fa-chart-line me-1"></i> Dashboard
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/dashboard/produk">
+                    <i class="fa-solid fa-cart-shopping"></i> Produk
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-9 rounded ms-4 mt-2">
+            <div class="my-3">
+              <h4>Total Produk : {{ products.length }}</h4>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
-    <!-- Sidebar -->
-    <nav
-      id="sidebarMenu"
-      class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse"
-    >
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="/dashboard">
-              <i class="fa-solid fa-chart-line me-1"></i> Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/dashboard/post"
-              ><i class="fa-solid fa-cart-shopping"></i> Produk
-            </a>
-          </li>
-        </ul>
-
-        <h6
-          class="
-            sidebar-heading
-            d-flex
-            justify-content-between
-            align-items-center
-            px-3
-            mt-4
-            mb-1
-            text-muted
-          "
-        ></h6>
-      </div>
-    </nav>
-
+    </section>
     <FooterView />
   </div>
 </template>
 
 <script>
+import HeaderDashboard from "@/components/HeaderDashboard.vue";
 import FooterView from "@/components/FooterView.vue";
+import axios from "axios";
 export default {
   name: "DashboardView",
   components: {
+    HeaderDashboard,
     FooterView,
+  },
+  data() {
+    return {
+      products: [],
+    };
+  },
+  methods: {
+    setProduk(data) {
+      this.products = data;
+    },
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/produk")
+      .then((response) => this.setProduk(response.data))
+      .catch((error) => console.log("Error", error));
   },
 };
 </script>

@@ -14,6 +14,7 @@ import CheckoutSukses from '../views/CheckoutSukses.vue'
 import PesananSaya from '../views/PesananSaya.vue'
 import AkunSaya from '../views/AkunSaya.vue'
 import DashboardView from '../views/DashboardView.vue'
+import DashboardProduk from '../views/DashboardProduk.vue'
 import LoginView from '../views/LoginView.vue'
 import RegistrasiView from '../views/RegistrasiView.vue'
 
@@ -93,6 +94,11 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard - Dokter Komputer',
     component: DashboardView
+  },
+  {
+    path: '/dashboard/produk',
+    name: 'Dashboard Produk - Dokter Komputer',
+    component: DashboardProduk
   },
   {
     path: '/login',
