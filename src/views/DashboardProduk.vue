@@ -23,7 +23,7 @@
           <div class="col-lg-9 rounded ms-4 mt-2">
             <div class="d-flex justify-content-between my-3">
               <h3>Semua Produk</h3>
-              <router-link to="/dahsboard/create" class="btn my-button">
+              <router-link to="/dashboard/create" class="btn my-button">
                 <i class="fa-solid fa-plus"></i> Tambah Data
               </router-link>
             </div>

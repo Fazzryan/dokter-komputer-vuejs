@@ -15,6 +15,7 @@ import PesananSaya from '../views/PesananSaya.vue'
 import AkunSaya from '../views/AkunSaya.vue'
 import DashboardView from '../views/DashboardView.vue'
 import DashboardProduk from '../views/DashboardProduk.vue'
+import DashboardAddProduk from '../views/DashboardAddProduk.vue'
 import DashboardProdukEdit from '../views/DashboardProdukEdit.vue'
 import LoginView from '../views/LoginView.vue'
 import RegistrasiView from '../views/RegistrasiView.vue'
@@ -104,7 +105,7 @@ const routes = [
   {
     path: '/dashboard/create',
     name: 'Tambah Produk - Dokter Komputer',
-    component: DashboardProdukEdit
+    component: DashboardAddProduk
   },
   {
     path: '/dashboard/produk/:id/edit',
