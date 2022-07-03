@@ -44,6 +44,7 @@ export default {
   },
   data() {
     return {
+      users: "",
       products: [],
     };
   },
@@ -53,6 +54,16 @@ export default {
     },
   },
   mounted() {
+    let user = localStorage.getItem("user-info");
+    let isAdmin = JSON.parse(user).namaD;
+    //jika tidak ada user maka balik ke login
+    if (!user) {
+      return this.$router.push({ path: "/login" });
+    }
+    //jika user bukan admin maka balik ke home
+    if (isAdmin != "Admin") {
+      return this.$router.push({ path: "/" });
+    }
     axios
       .get("http://localhost:3000/produk")
       .then((response) => this.setProduk(response.data))

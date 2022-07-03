@@ -44,13 +44,18 @@
                       <td>{{ product.kategori }}</td>
                       <td>Rp.{{ formatHarga(product.harga) }}</td>
                       <td>
-                        <a href="" class="btn my-button"
+                        <router-link
+                          :to="'/dashboard/produk/' + product.id + '/edit'"
+                          class="btn my-button"
                           ><i class="fa-solid fa-pen-to-square"></i>
-                        </a>
+                        </router-link>
                         |
-                        <a href="" class="btn my-button"
-                          ><i class="fa-solid fa-trash-can"></i>
-                        </a>
+                        <button
+                          class="btn my-button"
+                          @click="hapusProduk(product.id)"
+                        >
+                          <i class="fa-solid fa-trash-can"></i>
+                        </button>
                       </td>
                     </tr>
                   </tbody>
@@ -84,12 +89,41 @@ export default {
     setProduk(data) {
       this.products = data;
     },
+    hapusProduk(id) {
+      axios
+        .delete("http://localhost:3000/produk/" + id)
+        .then(() => {
+          this.$toast.success("Produk berhasil dihapus!", {
+            type: "success",
+            position: "top",
+            duration: 3000,
+            dismissible: true,
+          });
+
+          // update produk
+          axios
+            .get("http://localhost:3000/produk")
+            .then((response) => this.setProduk(response.data))
+            .catch((error) => console.log("Error", error));
+        })
+        .catch((error) => console.log("Error", error));
+    },
     formatHarga(value) {
       let val = (value / 1).toFixed().replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
   mounted() {
+    let user = localStorage.getItem("user-info");
+    let isAdmin = JSON.parse(user).namaD;
+    //jika tidak ada user maka balik ke login
+    if (!user) {
+      return this.$router.push({ path: "/login" });
+    }
+    //jika user bukan admin maka balik ke home
+    if (isAdmin != "Admin") {
+      return this.$router.push({ path: "/" });
+    }
     axios
       .get("http://localhost:3000/produk")
       .then((response) => this.setProduk(response.data))
