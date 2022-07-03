@@ -35,6 +35,13 @@
                       <th>Aksi</th>
                     </tr>
                   </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ products.nama }}</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -49,11 +56,28 @@
 <script>
 import HeaderDashboard from "@/components/HeaderDashboard.vue";
 import FooterView from "@/components/FooterView.vue";
+import axios from "axios";
 export default {
   name: "DashboardProdukEdit",
   components: {
     HeaderDashboard,
     FooterView,
+  },
+  data() {
+    return {
+      products: [],
+    };
+  },
+  methods: {
+    setProduct(data) {
+      this.products = data;
+    },
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/produk/" + this.$route.params.id)
+      .then((response) => this.setProduct(response.data))
+      .catch((error) => console.log("ERROR", error));
   },
 };
 </script>
