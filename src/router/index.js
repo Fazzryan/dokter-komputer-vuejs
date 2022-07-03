@@ -102,6 +102,11 @@ const routes = [
     component: DashboardProduk
   },
   {
+    path: '/dashboard/create',
+    name: 'Tambah Produk - Dokter Komputer',
+    component: DashboardProdukEdit
+  },
+  {
     path: '/dashboard/produk/:id/edit',
     name: 'Edit Produk - Dokter Komputer',
     component: DashboardProdukEdit
