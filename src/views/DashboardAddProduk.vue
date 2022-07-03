@@ -58,9 +58,14 @@
                 <img :src="imgSrc" v-if="imgSrc" />
               </div>
               <div class="col-md-6">
-                <button @click="tambahData()" class="btn my-button">
-                  Tambah Data
-                </button>
+                <div class="d-flex justify-content-between">
+                  <router-link to="/dashboard/produk" class="btn my-button-3">
+                    <i class="fa-solid fa-arrow-left"></i> Kembali
+                  </router-link>
+                  <button @click="tambahData()" class="btn my-button">
+                    Tambah Data
+                  </button>
+                </div>
               </div>
             </div>
           </div>
