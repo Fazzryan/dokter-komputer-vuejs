@@ -322,7 +322,7 @@
               <i class="fa-solid fa-truck fs-1 my-3 text-primary"></i>
               <h6 class="fw-bold">PENGIRIMAN AMAN DAN CEPAT</h6>
               <span class="text-muted">
-                Kami menjamin barang samapi dengan cepat dan tepat waktu
+                Kami menjamin barang sampai dengan cepat dan tepat waktu
               </span>
             </div>
           </div>
@@ -395,7 +395,7 @@ export default {
   mounted() {
     axios
       .get(
-        "http://localhost:3000/produk?id=1&id=2&id=5&id=6&id=10&id=9&id=20&id=17"
+        "http://localhost:3000/produk?id=3&id=5&id=9&id=14&id=20&id=30&id=31&id=41"
       )
       .then((response) => this.setProduk(response.data))
       .catch((error) => console.log("Gagal", error));

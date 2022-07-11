@@ -63,7 +63,9 @@
           <div class="col-md-6 mt-5 mt-md-0">
             <span class="badge bg-danger">{{ products.kategori }}</span>
             <h4 class="fw-bold mt-2">{{ products.nama }}</h4>
-            <p style="color: #4e54c8">Rp. {{ formatHarga(products.harga) }}</p>
+            <h5 class="mb-4 mt-2" style="color: #4e54c8">
+              Rp. {{ formatHarga(products.harga) }}
+            </h5>
             <small for="qty">Jumlah item</small>
             <form class="mt-2 d-flex" v-on:submit.prevent>
               <input

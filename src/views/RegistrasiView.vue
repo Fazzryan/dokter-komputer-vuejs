@@ -110,7 +110,7 @@ export default {
       console.warn(result);
       if (result.status == 201) {
         localStorage.setItem("user-info", JSON.stringify(result.data));
-        this.$router.push({ path: "/" });
+        this.$router.push({ path: "/login" });
         this.$toast.success("Akun Berhasil Dibuat!", {
           type: "success",
           position: "top",

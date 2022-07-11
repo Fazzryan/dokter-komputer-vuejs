@@ -58,6 +58,12 @@
                 </div>
                 <div
                   class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
+                  @click="cariLaptop('Laptop')"
+                >
+                  <i class="fa-solid fa-laptop"></i> Laptop
+                </div>
+                <div
+                  class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
                   @click="cariKomponenPc('KomponenPc')"
                 >
                   <i class="fa-solid fa-microchip me-1"></i> KomponenPC
@@ -83,14 +89,14 @@
                 </div>
                 <div
                   class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
-                  @click="hargaTertinggi()"
+                  @click="hargaTertinggi('Harga Tertinggi')"
                 >
                   <i class="fa-solid fa-arrow-up-short-wide"></i> Harga
                   Tertinggi
                 </div>
                 <div
                   class="kategori px-3 py-1 my-2 mx-2 mx-md-3"
-                  @click="hargaTerendah()"
+                  @click="hargaTerendah('Harga Terendah')"
                 >
                   <i class="fa-solid fa-arrow-down-wide-short"></i> Harga
                   Terendah
@@ -217,10 +223,24 @@ export default {
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
+    cariLaptop(laptop) {
+      this.kategori = laptop;
+      axios
+        .get("http://localhost:3000/produk?kategori=" + laptop)
+        .then((response) => this.setProduct(response.data))
+        .catch((error) => console.log("ERROR", error));
+    },
     cariKomponenPc(komponenPc) {
       this.kategori = komponenPc;
       axios
         .get("http://localhost:3000/produk?kategori=" + komponenPc)
+        .then((response) => this.setProduct(response.data))
+        .catch((error) => console.log("ERROR", error));
+    },
+    cariMouseKeyboard(mousekeyboard) {
+      this.kategori = mousekeyboard;
+      axios
+        .get("http://localhost:3000/produk?kategori=" + mousekeyboard)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
@@ -231,13 +251,15 @@ export default {
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
-    hargaTertinggi() {
+    hargaTertinggi(harga) {
+      this.kategori = harga;
       axios
         .get("http://localhost:3000/produk?_sort=harga&_order=desc")
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
-    hargaTerendah() {
+    hargaTerendah(harga) {
+      this.kategori = harga;
       axios
         .get("http://localhost:3000/produk?_sort=harga&_order=asc")
         .then((response) => this.setProduct(response.data))

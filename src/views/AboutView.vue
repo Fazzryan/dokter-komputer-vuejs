@@ -98,7 +98,7 @@
           <div class="col-lg-4 col-md-6 mt-2">
             <div class="my-1 py-3 bg-white rounded-3 shadow">
               <img
-                src="../assets/img/furqon.jpg"
+                src="../assets/img/andika.jpg"
                 class="w-50 p-2 border border-2"
                 style="border-radius: 150px 150px 150px 150px"
               />
@@ -242,22 +242,22 @@
           <div class="col-lg-4 col-md-6 mt-2">
             <div class="my-1 py-3 bg-white rounded-3 shadow">
               <img
-                src="../assets/img/furqon.jpg"
+                src="../assets/img/faisal.jpeg"
                 class="w-50 p-2 border border-2"
                 style="border-radius: 150px 150px 150px 150px"
               />
               <div class="px-3 text-center">
-                <h6 class="fw-bold mt-3">Andika Adipradana Faisal</h6>
+                <h6 class="fw-bold mt-3">Faisal Nur Rojab</h6>
                 <p class="d-block text-muted">
                   Software Engginer - STMIK Tasikmalaya
                 </p>
                 <ul class="list-unstyled">
                   <li>
-                    <i class="fa-solid fa-phone me-2"></i> +62 851-5687-1638
+                    <i class="fa-solid fa-phone me-2"></i> +62 831-0708-0341
                   </li>
                   <li>
                     <i class="fa-solid fa-envelope me-2"></i>
-                    andikaaf@gmail.com
+                    faisalnurrozab@gmail.com
                   </li>
                 </ul>
                 <a class="me-2 mb-2 btn btn-outline-dark" href="#">
@@ -278,22 +278,22 @@
           <div class="col-lg-4 col-md-6 mt-2">
             <div class="my-1 py-3 bg-white rounded-3 shadow">
               <img
-                src="../assets/img/furqon.jpg"
+                src="../assets/img/wildan.jpg"
                 class="w-50 p-2 border border-2"
                 style="border-radius: 150px 150px 150px 150px"
               />
               <div class="px-3 text-center">
-                <h6 class="fw-bold mt-3">Andika Adipradana Faisal</h6>
+                <h6 class="fw-bold mt-3">Wildan Nurjamil Sya'bani</h6>
                 <p class="d-block text-muted">
                   Software Engginer - STMIK Tasikmalaya
                 </p>
                 <ul class="list-unstyled">
                   <li>
-                    <i class="fa-solid fa-phone me-2"></i> +62 851-5687-1638
+                    <i class="fa-solid fa-phone me-2"></i> +62 821-2382-8549
                   </li>
                   <li>
                     <i class="fa-solid fa-envelope me-2"></i>
-                    andikaaf@gmail.com
+                    wildannur281001@gmail.com
                   </li>
                 </ul>
                 <a class="me-2 mb-2 btn btn-outline-dark" href="#">
