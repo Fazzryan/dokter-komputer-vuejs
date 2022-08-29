@@ -100,7 +100,7 @@ export default {
   },
   methods: {
     async buatAkun() {
-      let result = await axios.post("http://localhost:3000/user", {
+      let result = await axios.post("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/user", {
         namaD: this.namaD,
         namaB: this.namaB,
         telepon: this.telepon,
