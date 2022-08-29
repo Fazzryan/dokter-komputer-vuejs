@@ -212,62 +212,62 @@ export default {
     allProduk() {
       this.kategori = "Semua Produk";
       axios
-        .get("http://localhost:3000/produk")
+        .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk")
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariKomputer(komputer) {
       this.kategori = komputer;
       axios
-        .get("http://localhost:3000/produk?kategori=" + komputer)
+        .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk?kategori=" + komputer)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariLaptop(laptop) {
       this.kategori = laptop;
       axios
-        .get("http://localhost:3000/produk?kategori=" + laptop)
+        .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk?kategori=" + laptop)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariKomponenPc(komponenPc) {
       this.kategori = komponenPc;
       axios
-        .get("http://localhost:3000/produk?kategori=" + komponenPc)
+        .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk?kategori=" + komponenPc)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariMouseKeyboard(mousekeyboard) {
       this.kategori = mousekeyboard;
       axios
-        .get("http://localhost:3000/produk?kategori=" + mousekeyboard)
+        .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk?kategori=" + mousekeyboard)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     cariAksesoris(aksesoris) {
       this.kategori = aksesoris;
       axios
-        .get("http://localhost:3000/produk?kategori=" + aksesoris)
+        .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk?kategori=" + aksesoris)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     hargaTertinggi(harga) {
       this.kategori = harga;
       axios
-        .get("http://localhost:3000/produk?_sort=harga&_order=desc")
+        .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk?_sort=harga&_order=desc")
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     hargaTerendah(harga) {
       this.kategori = harga;
       axios
-        .get("http://localhost:3000/produk?_sort=harga&_order=asc")
+        .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk?_sort=harga&_order=asc")
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
     searchProduct() {
       axios
-        .get("http://localhost:3000/produk?q=" + this.search)
+        .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk?q=" + this.search)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log("ERROR", error));
     },
@@ -278,7 +278,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/produk")
+      .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk")
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log("ERROR", error));
   },
