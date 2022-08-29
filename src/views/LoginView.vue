@@ -59,7 +59,7 @@ export default {
   methods: {
     async login() {
       let result = await axios.get(
-        `http://localhost:3000/user?email=${this.email}&password=${this.password}`
+        `https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/user?email=${this.email}&password=${this.password}`
       );
       if (result.status == 200 && result.data.length > 0) {
         localStorage.setItem("user-info", JSON.stringify(result.data[0]));
