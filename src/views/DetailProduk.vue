@@ -342,11 +342,11 @@ export default {
       this.userId = JSON.parse(user).id;
     }
     axios
-      .get("http://localhost:3000/produk/" + this.$route.params.id)
+      .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/produk/" + this.$route.params.id)
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log("ERROR", error));
     axios
-      .get("http://localhost:3000/komentar?idProduct=" + this.$route.params.id)
+      .get("https://my-json-server.typicode.com/fazzryan/dokter-komputer-api/komentar?idProduct=" + this.$route.params.id)
       .then((response) => this.setKomentar(response.data))
       .catch((error) => console.log("ERROR", error));
   },
